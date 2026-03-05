@@ -3,13 +3,14 @@ import java.util.Scanner;
 import factories.MathGame;
 import factories.NormalMathGame;
 import factories.EasyMathGame;
+import factories.FullRandomMathGame;
 import factories.HardMathGame;
 import factories.RandomMathGame;
 
 public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    System.out.println("Choisissez votre mode : 1(Easy), 2(Normal), 3(Hard), 4(Random)");
+    System.out.println("Choisissez votre mode : 1(Easy), 2(Normal), 3(Hard), 4(Random), 5(Full Random)");
     int choice = scanner.nextInt();
 
     MathGame game;
@@ -20,6 +21,7 @@ public class Main {
       case 2 -> game = new NormalMathGame(scanner);
       case 3 -> game = new HardMathGame(scanner);
       case 4 -> game = new RandomMathGame(scanner);
+      case 5 -> game = new FullRandomMathGame(scanner);
       default -> game = new NormalMathGame(scanner);
     }
 
