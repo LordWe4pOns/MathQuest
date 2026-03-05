@@ -4,11 +4,12 @@ import factories.MathGame;
 import factories.NormalMathGame;
 import factories.EasyMathGame;
 import factories.HardMathGame;
+import factories.RandomMathGame;
 
 public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    System.out.println("Choisissez votre mode : 1(Easy), 2(Normal), 3(Hard)");
+    System.out.println("Choisissez votre mode : 1(Easy), 2(Normal), 3(Hard), 4(Random)");
     int choice = scanner.nextInt();
 
     MathGame game;
@@ -18,6 +19,7 @@ public class Main {
       case 1 -> game = new EasyMathGame(scanner);
       case 2 -> game = new NormalMathGame(scanner);
       case 3 -> game = new HardMathGame(scanner);
+      case 4 -> game = new RandomMathGame(scanner);
       default -> game = new NormalMathGame(scanner);
     }
 
